@@ -1,0 +1,146 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Search</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: skyblue;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+      background-color: rgba(113, 215, 255, 0.726);
+    }
+
+    .active {
+      background-color: rgba(34, 34, 43, 0.733);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <img src="Images/logo-removebg-preview.png" alt="Logo">
+      <h1>Search Your Country</h1>
+    </div>
+    <div class="header-options">
+      <span class="language-selection">Language</span>
+      <span class="sign-in">Sign In</span>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Continents</a></li>
+      <li><a href="#news">Countries</a></li>
+      <li><a href="#contact">Languages</a></li>
+      <li style="float:right"><a class="active" href="#about">Flags</a></li>
+    </ul>
+  </nav>
+
+  <!-- Search Option -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group mb-3">
+          <input type="text" id="countryInput" class="form-control" placeholder="Search for a country">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="searchCountry()">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="countryData" class="row mt-4">
+      <div class="card" data-country="${country.name?.common}">
+        <img src="${flagUrl}" class="card-img-top" alt="${country.name?.common}">
+        <div class="card-body">
+          <h5 class="card-title">
+            ${country.name?.common ? country.name?.common : 'Country Name Not Available'}
+          </h5>
+          ${country.capital ? `<p class="card-text">Capital: ${country.capital}</p>` : ''}
+          ${country.population ? `<p class="card-text">Population: ${country.population}</p>` : ''}
+          <button class="btn btn-primary" onclick="showMoreDetails('${country.name?.common}')">More Details</button>
+        </div>
+        <div class="weather-info"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Locations -->
+  <div class="popular-locations">
+    <h2>Popular Locations</h2>
+    <ul>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/prince-edward-island/charlottetown">Charlottetown</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/ontario/mississauga">Mississauga</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/british-columbia/victoria">Victoria</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/saskatchewan/regina">Regina</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/quebec/quebec">Québec</a></li>
+
+      <li><a href="https://www.theweathernetwork.com/ca/weather/ontario/kitchener">Kitchener</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/ontario/ottawa">Ottawa</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/manitoba/winnipeg">Winnipeg</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/new-brunswick/fredericton">Fredericton</a></li>
+      <li><a href="https://www.theweathernetwork.com/ca/weather/ontario/hamilton">Hamilton</a></li>   
+    </ul>
+  </div>
+
+  <!-- More Section -->
+  <div class="news-section">
+    <h2>How many countries are there in the world?</h2>
+    <img src="Images/World-Flag-map-Nell-L.jpg" alt="">
+    <p style="font-size: medium; font-weight: bold;">
+      Since South Sudan became an independent state on 9 July 2011, there are now 195 independent sovereign nations in the world (not including the disputed but de facto independent Taiwan, plus some 60 dependent areas and several disputed territories, such as Kosovo). <br>
+
+      193 sovereign states are United Nations members and equally represented in the UN General Assembly. Two non-member countries have permanent observer states: the Holy See and the State of Palestine. <br>
+
+      Below is a list of countries and areas of the world in alphabetical order, with official names and alternative designations. The list contains English and French country names as well as the local names of the countries. <br>
+
+      Each country profile contains links to and information about important official websites of a country/territory, geographic information, maps, the national flag, history, culture and tourist destinations. The country profiles include information on a country's population and languages, its capital(s) and largest cities, tourist attractions and world heritage sites, as well as education, economy, newspapers and news sources, and other country information.
+
+    </p>
+    
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      Copyright © 2023 :: https://foyezislam-1910320-finalAssignment.netlify.app/
+    </div>
+  </footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <script src="Index.js"></script>
+  <script>
+    searchCountry('Bangladesh');
+  </script>
+</body>
+
+</html>

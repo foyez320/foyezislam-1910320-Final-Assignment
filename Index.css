@@ -1,0 +1,78 @@
+body {
+  background-color: #f0f0f0; 
+  background-image: url('https://wallpapercrafter.com/th8004/1311606-sky-clouds-blue-white-weather-day-summer-cloudscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  padding: 15px 10px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  
+}
+
+.header-options {
+  display: flex;
+  align-items: center;
+}
+
+.header-options span {
+  margin-right: 10px; 
+  color: white;
+  cursor: pointer;
+}
+
+.language-selection:hover,
+.sign-in:hover {
+  text-decoration: underline; 
+}
+
+
+#search {
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+
+.popular-locations {
+  margin-top: 20px;
+}
+
+.popular-locations h2 {
+  color: navy;
+}
+
+.news-section {
+  margin-top: 20px;
+  color: white;
+}
+.news-section img{
+  width: 100%;
+}
+
+footer {
+  background-color: navy;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px; 
+}
+
+.weather-info {
+  background-color: rgba(0, 0, 0, 0.7); 
+  color: white; 
+  padding: 10px;
+}
+
